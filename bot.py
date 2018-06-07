@@ -111,12 +111,9 @@ def main():
 
 	def les(num):
 		if num>0:
-			sleep(random.randint(1, 5))
-			client.send_message(bot, "🗺Квесты")
-			sleep(random.randint(2, 4))
-			client.send_message(bot, "🌲Лес")
-			sleep(random.randint(480, 600))
-			les(num-1)
+			threading.Timer(random.randint(1, 4), mess, "🗺Квесты")
+			threading.Timer(random.randint(1, 5), mess, "🌲Лес")
+			threading.Timer(random.randint(480,600), les, num-1)
 
 	def corovan(num):
 		if num>0:
