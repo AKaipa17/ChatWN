@@ -106,7 +106,7 @@ def main():
 				les(3)
 
 		if update.message.message == "test":
-			les(1)
+			threading.Timer(random.randint(2, 3), mess, "🏅Герой")
 
 
 	def les(num):
