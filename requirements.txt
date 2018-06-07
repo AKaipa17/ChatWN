@@ -1,0 +1,17 @@
+click==6.7
+DictObject==0.1.3
+Flask==0.12.2
+itsdangerous==0.24
+Jinja2==2.10
+luckydonald-utils==0.57
+MarkupSafe==1.0
+pyaes==1.6.1
+pyasn1==0.4.2
+pytg==0.4.10
+pytz==2017.3
+rsa==3.4.2
+sender==0.3
+Telethon==0.18.2.2
+Werkzeug==0.14.1
+gunicorn==19.7.1
+psutil==5.4.3
