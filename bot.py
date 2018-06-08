@@ -138,7 +138,6 @@ def root():
 	return 'hi'
 
 if __name__ == '__main__':
-
 	backProc = Process(target = main, args=())
 	backProc.start()
 	port = int(os.environ.get('PORT', 5020))
