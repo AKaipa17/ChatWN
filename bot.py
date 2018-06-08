@@ -118,7 +118,7 @@ def main():
 	def les(num):
 		if num>0:
 			threading.Timer(random.randint(1, 4), mess, ["🗺Квесты"]).start()
-			threading.Timer(random.randint(1, 5), mess, ["🌲Лес"]).start()
+			threading.Timer(random.randint(5, 7), mess, ["🌲Лес"]).start()
 			threading.Timer(random.randint(480,600), les, [num-1]).start()
 
 	def corovan(num):
