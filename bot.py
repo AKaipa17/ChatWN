@@ -40,6 +40,7 @@ oratorID = 566539993
 otryad = PeerChannel(1327713488)
 bot = "ChatWarsBot"
 botid = 265204902
+last_pin = "🦇"
 
 
 def main():
@@ -48,6 +49,7 @@ def main():
 	global botid
 	global otryad
 	global oratorID
+	global last_pin
 
 	client = TelegramClient("bot", 243918, '2ace13b37b702eb5407964ff753fc37d', spawn_read_thread=False, update_workers = 1)
 	client.start()
@@ -62,34 +64,43 @@ def main():
 		local_dt = utc_dt.replace(tzinfo=pytz.utc).astimezone(local_tz)
 		return local_tz.normalize(local_dt)
 
-	def pin(pin):
-		sleep(random.randint(1,3))
-		client.send_message(bot, "⚔Атака")
-		sleep(random.randint(1,3))
-		client.send_message(bot, pin)
+	def pin():
+		threading.Timer(random.ranint(1, 2), mess, ["⚔Атака"])
+
 
 	@client.on(events.NewMessage)
 	def attack(update):
 		if update.message.from_id == oratorID and update.message.to_id == otryad:
 			theMessage = update.message.message
 			if "⚔️🖤" in theMessage:
-				pin("🖤")
+				last_pin = "🖤"
+				pin()
 			elif "⚔️☘️" in theMessage:
-				pin("☘️")
+				last_pin = "☘️"
+				pin()
 			elif "⚔️🍁" in theMessage:
-				pin("🍁")
+				last_pin = "🍁"
+				pin()
 			elif "⚔️🐢" in theMessage:
-				pin("🐢")
+				last_pin = "🐢"
+				pin()
 			elif "⚔️🦇" in theMessage:
-				pin("🦇")
+				last_pin = "🦇"
+				pin()
 			elif "⚔️🍆" in theMessage:
-				pin("🍆")
+				last_pin = "🍆"
+				pin()
 			elif "⚔️🌹" in theMessage:
-				pin("🌹")
+				last_pin = "🌹"
+				pin()
 
 		if "Сводки с полей" in update.message.message:
 			sleep(random.randint(10, 16))
 			client.send_message(bot, "/report")
+
+		if "Смелый вояка!" in update.message.message and update.message.from_id == botid:
+			threading.Timer(random.randint(1, 2), mess, [last_pin])
+			last_pin = "🦇"
 
 		if "/go" in update.message.message:
 			sleep(random.randint(7, 15))
