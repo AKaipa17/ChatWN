@@ -99,7 +99,7 @@ def main():
 			client.send_message(bot, "/report")
 
 		if "Смелый вояка!" in update.message.message and update.message.from_id == botid:
-			threading.Timer(random.randint(1, 2), mess, [last_pin])
+			threading.Timer(random.randint(1, 2), mess, [last_pin]).start()
 			last_pin = "🦇"
 
 		if "/go" in update.message.message:
