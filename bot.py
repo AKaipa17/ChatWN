@@ -65,7 +65,8 @@ def main():
 		return local_tz.normalize(local_dt)
 
 	def pin():
-		threading.Timer(random.ranint(1, 2), mess, ["⚔Атака"]).start()
+		sleep(random.randint(1, 2))
+		client.send_message(bot, "⚔Атака")
 
 
 	@client.on(events.NewMessage)
@@ -98,8 +99,9 @@ def main():
 			sleep(random.randint(10, 16))
 			client.send_message(bot, "/report")
 
-		if "Смелый вояка!" in update.message.message and update.message.from_id == botid:
-			threading.Timer(random.randint(1, 2), mess, [last_pin]).start()
+		if "Смелый вояка!" in update.message.message:
+			sleep(random.randint(1, 2))
+			client.send_message(bot, last_pin)
 			last_pin = "🦇"
 
 		if "/go" in update.message.message:
