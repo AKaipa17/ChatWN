@@ -59,7 +59,6 @@ def main():
 	def mess(messag):
 		client.send_message(bot, messag)
 
-
 	def utc_to_local(utc_dt):
 		local_dt = utc_dt.replace(tzinfo=pytz.utc).astimezone(local_tz)
 		return local_tz.normalize(local_dt)
@@ -101,7 +100,7 @@ def main():
 
 		if "Смелый вояка!" in update.message.message:
 			sleep(random.randint(1, 2))
-			client.send_message(bot, last_pin)
+			mess(last_pin)
 			last_pin = "🦇"
 
 		if "/go" in update.message.message:
