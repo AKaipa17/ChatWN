@@ -40,7 +40,7 @@ oratorID = 566539993
 otryad = PeerChannel(1327713488)
 bot = "ChatWarsBot"
 botid = 265204902
-lastpin = "🦇"
+
 
 
 def main():
@@ -49,7 +49,7 @@ def main():
 	global botid
 	global otryad
 	global oratorID
-	global lastpin
+
 
 	client = TelegramClient("bot", 243918, '2ace13b37b702eb5407964ff753fc37d', spawn_read_thread=False, update_workers = 1)
 	client.start()
@@ -112,7 +112,6 @@ def main():
 				les(3)
 
 		if update.message.message == "test":
-			print(lastpin)
 			threading.Timer(random.randint(2, 3), mess, ["🏅Герой"]).start()
 
 
