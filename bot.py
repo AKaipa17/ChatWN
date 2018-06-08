@@ -65,7 +65,7 @@ def main():
 		return local_tz.normalize(local_dt)
 
 	def pin():
-		threading.Timer(random.ranint(1, 2), mess, ["⚔Атака"])
+		threading.Timer(random.ranint(1, 2), mess, ["⚔Атака"]).start()
 
 
 	@client.on(events.NewMessage)
