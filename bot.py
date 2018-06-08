@@ -92,12 +92,6 @@ def main():
 			sleep(random.randint(10, 16))
 			client.send_message(bot, "/report")
 
-		if "Смелый вояка!" in update.message.message:
-			print(lastpin)
-			sleep(random.randint(1, 2))
-			mess(lastpin)
-			lastpin = "🦇"
-
 		if "/go" in update.message.message:
 			sleep(random.randint(7, 15))
 			client.send_message(bot, "/go")
