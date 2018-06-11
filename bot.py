@@ -65,7 +65,7 @@ def main():
 
 	@client.on(events.NewMessage)
 	def attack(update):
-		lastpin = "🦇"
+		global lastpin
 		if update.message.from_id == oratorID and update.message.to_id == otryad:
 			theMessage = update.message.message
 			if "⚔️🖤" in theMessage:
@@ -96,6 +96,9 @@ def main():
 				lastpin = "🌹"
 				sleep(random.randint(1, 2))
 				client.send_message(bot, "⚔Атака")
+		if "skala" in update.message.message:
+			lastpin = "🍆"
+			print(lastpin)
 
 		if "Сводки с полей" in update.message.message:
 			sleep(random.randint(10, 16))
