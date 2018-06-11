@@ -131,6 +131,7 @@ def main():
 
 		if "⚖️Exchange slot: Stick" in update.message.message:
 			comm = update.message.message.split(" ")
+			sleep(random.randint(1,3))
 			mess(comm[8])
 
 
