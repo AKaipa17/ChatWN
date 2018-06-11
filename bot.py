@@ -129,6 +129,10 @@ def main():
 		if update.message.message == "test":
 			threading.Timer(random.randint(2, 3), mess, ["🏅Герой"]).start()
 
+		if "⚖️Exchange slot: Stick" in update.message.message:
+			comm = update.message.message.split(" ")
+			mess(comm[8])
+
 
 	def les(num):
 		if num>0:
