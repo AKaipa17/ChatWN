@@ -63,10 +63,6 @@ def main():
 		local_dt = utc_dt.replace(tzinfo=pytz.utc).astimezone(local_tz)
 		return local_tz.normalize(local_dt)
 
-	def pin():
-		sleep(random.randint(1, 2))
-		client.send_message(bot, "⚔Атака")
-
 	@client.on(events.NewMessage)
 	def attack(update):
 		lastpin = "🦇"
@@ -74,25 +70,32 @@ def main():
 			theMessage = update.message.message
 			if "⚔️🖤" in theMessage:
 				lastpin = "🖤"
-				pin()
+				sleep(random.randint(1, 2))
+				client.send_message(bot, "⚔Атака")
 			elif "⚔️☘️" in theMessage:
 				lastpin = "☘️"
-				pin()
+				sleep(random.randint(1, 2))
+				client.send_message(bot, "⚔Атака")
 			elif "⚔️🍁" in theMessage:
 				lastpin = "🍁"
-				pin()
+				sleep(random.randint(1, 2))
+				client.send_message(bot, "⚔Атака")
 			elif "⚔️🐢" in theMessage:
 				lastpin = "🐢"
-				pin()
+				sleep(random.randint(1, 2))
+				client.send_message(bot, "⚔Атака")
 			elif "⚔️🦇" in theMessage:
 				lastpin = "🦇"
-				pin()
+				sleep(random.randint(1, 2))
+				client.send_message(bot, "⚔Атака")
 			elif "⚔️🍆" in theMessage:
 				lastpin = "🍆"
-				pin()
+				sleep(random.randint(1, 2))
+				client.send_message(bot, "⚔Атака")
 			elif "⚔️🌹" in theMessage:
 				lastpin = "🌹"
-				pin()
+				sleep(random.randint(1, 2))
+				client.send_message(bot, "⚔Атака")
 
 		if "Сводки с полей" in update.message.message:
 			sleep(random.randint(10, 16))
