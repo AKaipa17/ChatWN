@@ -96,9 +96,6 @@ def main():
 				lastpin = "🌹"
 				sleep(random.randint(1, 2))
 				client.send_message(bot, "⚔Атака")
-		if "skala" in update.message.message:
-			lastpin = "🍆"
-			print(lastpin)
 
 		if "Сводки с полей" in update.message.message:
 			sleep(random.randint(10, 16))
