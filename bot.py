@@ -66,6 +66,7 @@ def main():
 	@client.on(events.NewMessage)
 	def attack(update):
 		global lastpin
+		global lastgold
 		if update.message.from_id == oratorID and update.message.to_id == otryad:
 			theMessage = update.message.message
 			if "⚔️🖤" in theMessage:
@@ -129,10 +130,17 @@ def main():
 		if update.message.message == "test":
 			threading.Timer(random.randint(2, 3), mess, ["🏅Герой"]).start()
 
-		if "⚖️Exchange slot: Stick" in update.message.message:
-			comm = update.message.message.split(" ")
-			sleep(1)
-			mess(comm[8])
+		#if "⚖️Exchange slot: Stick" in update.message.message:
+			#if lastgold != 0:
+				#comm = update.message.message.split(" ")
+				#sleep(1)
+				#mess(min(lastgold, comm[8]))
+
+		#if "Битва семи замков через" in update.message.message:
+			#comm = update.message.message.split("\n")
+			#gold = comm[10].split("💰")
+			#lastgold = int(gold[1])
+			#print(lastgold)
 
 
 	def les(num):
